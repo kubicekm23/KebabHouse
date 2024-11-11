@@ -42,12 +42,12 @@ public class Kebab
 
         if (masoOnly)
         {
-            _ingredience["maso"] = 2;
+            _ingredience["maso"] = 3;
             _cena += 20;
         }
         else
         {
-            _ingredience["maso"] = 1;
+            _ingredience["maso"] = 2;
             _ingredience["mrkev"] = 1;
             _ingredience["cibule"] = 1;
             _ingredience["zeli"] = 1;
@@ -110,4 +110,6 @@ public class Kebab
 
         return "žádnou omáčkou";
     }
+    
+    public int GetCena(){ return _cena; }
 }

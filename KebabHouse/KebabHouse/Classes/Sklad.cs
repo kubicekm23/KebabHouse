@@ -57,6 +57,20 @@ public class Sklad
         _cibule -= ingredience["cibule"];
         _mrkev -= ingredience["mrkev"];
     }
-    
-    public void DoplnitSklad(){}
+
+    public void DoplnitSklad()
+    {
+        _maso += 30;
+
+        _chleba += 5;
+        _tortila += 10;
+
+        _omackaBylinka += 15;
+        _omackaCesnek += 15;
+        _omackaChilli += 15;
+
+        _cibule += 20;
+        _mrkev += 20;
+        _zeli += 20;
+    }
 }
