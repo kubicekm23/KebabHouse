@@ -28,13 +28,23 @@ public class Sklad
 
     }
 
-    public bool kontrolaIngredienci(Kebab objednavka)
+    public bool KontrolaIngredienci(Kebab objednavka)
     {
-        // TODO: dodělat kontrolu ingrediencí
+        Dictionary<string, int> ingredience = objednavka.getIngredience();
+        if (_chleba - ingredience["chleba"] < 0) { return false; }
+        else if (_tortila - ingredience["tortila"] < 0) { return false; }
+        else if (_omackaCesnek - ingredience["omackaCesnek"] < 0){ return false; }
+        else if (_omackaBylinka - ingredience["omackaBylinka"] < 0) { return false; }
+        else if (_omackaChilli - ingredience["omackaChilli"] < 0) { return false; }
+        else if (_mrkev - ingredience["mrkev"] < 0) { return false; }
+        else if (_cibule - ingredience["cibule"] < 0) { return false; }
+        else if (_zeli - ingredience["zeli"] < 0 ) { return false; }
+        else if (_maso - ingredience["maso"] < 0 ) { return false; }
+        
         return true;
     }
     
-    public void odebratZeSkladu(Kebab objednavka)
+    public void OdebratZeSkladu(Kebab objednavka)
     {
         Dictionary<string, int> ingredience = objednavka.getIngredience();
         _chleba -= ingredience["chleba"];
@@ -47,4 +57,6 @@ public class Sklad
         _cibule -= ingredience["cibule"];
         _mrkev -= ingredience["mrkev"];
     }
+    
+    public void DoplnitSklad(){}
 }

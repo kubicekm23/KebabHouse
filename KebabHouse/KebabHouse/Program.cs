@@ -12,32 +12,23 @@ class Program
         //testKebab.printKebabInfo();
 
         // Vytvoření všeho potřebného
-        Kebab _order;
+        Kebab order;
         bool objednavam = true;
-        Sklad _sklad = new Sklad();
+        Sklad sklad = new Sklad();
+        Cheff cheff = new Cheff();
         
         // loop se šéf kuchařem
         while (objednavam)
         {
-            Console.Write("Přáli by jste si objednat? ");
-            string input = Console.ReadLine();
-
-            switch (input)
+            objednavam = cheff.ChceSiObjednat();
+            if (objednavam)
             {
-                case "ne":
-                    objednavam = false;
-                    break;
-                case "Ne":
-                    objednavam = false;
-                    break;
-                case "Ne.":
-                    objednavam = false;
-                    break;
-                default:
-                    _order = Objednat();
-
-                    _sklad.odebratZeSkladu(_order);
-                    break;
+                order = Objednat();
+                if (sklad.KontrolaIngredienci(order))
+                {
+                    sklad.OdebratZeSkladu(order);
+                    cheff.PredaniKebabu(order);
+                }
             }
         }
     }

@@ -95,4 +95,19 @@ public class Kebab
     }
     
     public Dictionary<string, int> getIngredience() { return _ingredience; }
+
+    public string getOmackaString()
+    {
+        switch (_omacka)
+        {
+            case "omackaCesnek":
+                return "česnekovou";
+            case "omackaBylinka":
+                return "bylinkovou";
+            case "omackaChilli":
+                return "chilli";
+        }
+
+        return "žádnou omáčkou";
+    }
 }
