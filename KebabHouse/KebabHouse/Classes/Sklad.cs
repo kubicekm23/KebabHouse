@@ -28,6 +28,12 @@ public class Sklad
 
     }
 
+    public bool kontrolaIngredienci(Kebab objednavka)
+    {
+        // TODO: dodělat kontrolu ingrediencí
+        return true;
+    }
+    
     public void odebratZeSkladu(Kebab objednavka)
     {
         Dictionary<string, int> ingredience = objednavka.getIngredience();
